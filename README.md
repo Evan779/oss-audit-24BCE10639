@@ -3,7 +3,7 @@
 ## Overview
 This repository contains a suite of Bash scripts developed as part of a Linux Systems Administration Capstone Project. The scripts are designed to automate system profiling, audit file permissions, analyze system logs, and demonstrate core shell scripting concepts within an Ubuntu/Debian environment.
 
-## 🛠️ Scripts Included
+## Scripts Included
 
 ### 1. System Identity Profiler (`system_identity.sh`)
 Extracts and displays the core hardware and operating system identity of the Linux machine.
