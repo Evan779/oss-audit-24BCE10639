@@ -5,7 +5,7 @@ This repository contains a suite of Bash scripts developed as part of a Linux Sy
 
 ## Scripts Included
 
-### 1. System Identity Profiler (`system_identity.sh`)
+### 1. System Identity Profiler (`Script1.sh`)
 Extracts and displays the core hardware and operating system identity of the Linux machine.
 * **Concepts:** System queries (`hostnamectl`, `lscpu`, `free`), network interface parsing (`ip`), and terminal text formatting.
 
