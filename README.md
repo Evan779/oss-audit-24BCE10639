@@ -1,35 +1,34 @@
 # Linux Systems Administration & Auditing Scripts
 
 ## Overview
-This repository contains a suite of Bash scripts developed as part of a Linux Systems Administration Capstone Project. The scripts are designed to automate system profiling, audit file permissions, analyze system logs, and demonstrate core shell scripting concepts within an Ubuntu/Debian environment.
+This repository contains a collection of Linux shell scripts developed for a Linux Systems Administration Capstone Project. These scripts are intended to automate various Linux system administration functions, including system profiling, file permission auditing, system log analysis, and shell scripting fundamentals, all within an Ubuntu/Debian Linux environment.
 
 ## Scripts Included
 
-### 1. System Identity Profiler (`Script1.sh`)
-Extracts and displays the core hardware and operating system identity of the Linux machine.
-* **Concepts:** System queries (`hostnamectl`, `lscpu`, `free`), network interface parsing (`ip`), and terminal text formatting.
+### 1. System Identity Profiler Script (`Script1.sh`)
+This script retrieves and displays essential information about the Linux machine’s hardware and operating system.
+* **Concepts:** System queries using `hostnamectl`, `lscpu`, `free`; network interface parsing using `ip`; terminal text formatting.
 
-### 2. FOSS Package Inspector (`Script2.sh`)
-A utility to detect the active package manager (`dpkg` or `rpm`) and verify the installation status of specified open-source software (e.g., VLC, Python).
-* **Concepts:** `case` statements, exit codes (`$?`), and command output suppression (`/dev/null`).
+### 2. FOSS Package Inspector Script (`Script2.sh`)
+This script identifies the installed package manager type on the Linux system, whether `dpkg` or `rpm`, and checks for the installation of various free/open-source software packages such as VLC media player, Python, etc.
+* **Concepts:** Use of `case` statements, exit codes using `$?`, suppressing output to the screen using `/dev/null`.
 
-### 3. Disk & Permission Auditor (`Script3.sh`)
-Scans common Linux directories and generates a cleanly formatted, column-aligned audit table detailing directory sizes, ownership, and permission strings.
-* **Concepts:** `for` loops, arrays, `printf` formatting, and pipeline text extraction using `awk` and `cut`.
+### 3. Disk & Permission Auditor Script (`Script3.sh`)
+This script scans common Linux system directories, creating a clean, column-aligned table displaying disk space, ownership, and permission strings.
+* **Concepts:** Use of `for` loops, arrays, `printf`, and using `awk`, `cut` to extract text strings.
 
-### 4. Log File Analyzer (`Script4.sh`)
-Parses system logs (like `/var/log/dpkg.log` or `syslog`) line-by-line to count specific keywords, outputting a mathematical summary and match percentages.
-* **Concepts:** `while read` loops, command-line arguments (`$1`, `$2`), arithmetic evaluation, and conditional logic.
+### 4. Log File Analyzer Script (`Script4.sh`)
+This script reads system log files, such as `/var/log/dpkg.log`, line by line, to count specific keyword occurrences, displaying a mathematical calculation with percentages.
+* **Concepts:** Use of `while read`, using `$1`, `$2`, arithmetic evaluation, conditional logic.
 
-### 5. Open Source Manifesto Generator (`Script5.sh`)
-An interactive script that prompts the user for standard input, dynamically injects the variables into a multi-line string template, and outputs a personalized text file.
-* **Concepts:** `read` prompts, command substitution, string manipulation (`tr`), and output redirection (`>`).
+### 5. Open Source Manifesto Generator Script (`Script5.sh`)
+This script is an interactive shell script that asks the user for standard input, dynamically inserts user variables into a multi-line string template, and writes the customized text to a new file.
+* **Concepts:** Use of `read`, command substitution, string manipulation using `tr`, output redirection using `>`.
 
-##  How to Run
+## How to Run
+To use any of these scripts on your local Linux machine, you'll first need to make sure they're executable.
 
-To run any of these scripts on your local Linux machine, you must first ensure they have execute permissions.
-
-1. Clone the repository or download the scripts.
-2. Grant execute permissions:
-   ```bash
-   chmod +x script_name.sh
+1. Download the scripts from this repository.
+2. Change permissions to allow execution:
+```bash
+chmod +x script_name.sh
