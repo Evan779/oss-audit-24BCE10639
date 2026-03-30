@@ -1,7 +1,5 @@
 # Linux Systems Administration & Auditing Scripts
 
-## Overview
-This repository contains a collection of Linux shell scripts developed for a Linux Systems Administration Capstone Project. These scripts are intended to automate various Linux system administration functions, including system profiling, file permission auditing, system log analysis, and shell scripting fundamentals, all within an Ubuntu/Debian Linux environment.
 
 ## Scripts Included
 
