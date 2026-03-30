@@ -1,32 +1,52 @@
 # Linux Systems Administration & Auditing Scripts
 
+A collection of five Bash shell scripts developed as part of an Open Source Software Capstone Project. These scripts demonstrate core Linux system administration concepts including system profiling, package inspection, disk auditing, log analysis, and file generation.
+
+## Prerequisites
+
+- A Linux-based operating system (Ubuntu/Debian or RPM-based distro)
+- Bash shell (`/bin/bash`)
+- Standard Linux utilities: `hostnamectl`, `lscpu`, `ip`, `awk`, `grep`, `dpkg` or `rpm`
 
 ## Scripts Included
 
-### 1. System Identity Profiler Script (`Script1.sh`)
-This script retrieves and displays essential information about the Linux machine’s hardware and operating system.
-* **Concepts:** System queries using `hostnamectl`, `lscpu`, `free`; network interface parsing using `ip`; terminal text formatting.
+### 1. System Identity Profiler (`Script1.sh`)
+Retrieves and displays essential information about the Linux machine's hardware and operating system.
+- **Concepts:** System queries using `hostnamectl`, `lscpu`, `free`; network interface parsing using `ip`; terminal text formatting.
 
-### 2. FOSS Package Inspector Script (`Script2.sh`)
-This script identifies the installed package manager type on the Linux system, whether `dpkg` or `rpm`, and checks for the installation of various free/open-source software packages such as VLC media player, Python, etc.
-* **Concepts:** Use of `case` statements, exit codes using `$?`, suppressing output to the screen using `/dev/null`.
+### 2. FOSS Package Inspector (`Script2.sh`)
+Identifies the installed package manager (`dpkg` or `rpm`) and checks for the installation of free/open-source software packages such as VLC, Python, etc.
+- **Concepts:** `case` statements, exit codes using `$?`, suppressing output using `/dev/null`.
 
-### 3. Disk & Permission Auditor Script (`Script3.sh`)
-This script scans common Linux system directories, creating a clean, column-aligned table displaying disk space, ownership, and permission strings.
-* **Concepts:** Use of `for` loops, arrays, `printf`, and using `awk`, `cut` to extract text strings.
+### 3. Disk & Permission Auditor (`Script3.sh`)
+Scans common Linux system directories and displays disk space, ownership, and permission strings in a clean, column-aligned table.
+- **Concepts:** `for` loops, arrays, `printf`, `awk`, and `cut`.
 
-### 4. Log File Analyzer Script (`Script4.sh`)
-This script reads system log files, such as `/var/log/dpkg.log`, line by line, to count specific keyword occurrences, displaying a mathematical calculation with percentages.
-* **Concepts:** Use of `while read`, using `$1`, `$2`, arithmetic evaluation, conditional logic.
+### 4. Log File Analyzer (`Script4.sh`)
+Reads system log files (e.g., `/var/log/dpkg.log`) line by line, counts keyword occurrences, and displays a statistical summary with percentages.
+- **Concepts:** `while read`, positional parameters `$1`/`$2`, arithmetic evaluation, conditional logic.
 
-### 5. Open Source Manifesto Generator Script (`Script5.sh`)
-This script is an interactive shell script that asks the user for standard input, dynamically inserts user variables into a multi-line string template, and writes the customized text to a new file.
-* **Concepts:** Use of `read`, command substitution, string manipulation using `tr`, output redirection using `>`.
+### 5. Open Source Manifesto Generator (`Script5.sh`)
+An interactive script that prompts the user for input, inserts responses into a multi-line template, and saves the result as a new `.txt` file.
+- **Concepts:** `read`, command substitution, string manipulation using `tr`, output redirection using `>`.
 
 ## How to Run
-To use any of these scripts on your local Linux machine, you'll first need to make sure they're executable.
 
-1. Download the scripts from this repository.
-2. Change permissions to allow execution:
+1. Clone or download the scripts from this repository.
+2. Make the script executable:
 ```bash
 chmod +x script_name.sh
+```
+3. Run the script:
+```bash
+./script_name.sh
+```
+
+> **Note:** Script 4 requires two arguments — the log file path and the keyword to search for:
+> ```bash
+> ./Script4.sh /var/log/dpkg.log ERROR
+> ```
+
+## Author
+
+Developed as part of an Open Source Software Capstone Project exploring VLC Media Player and Linux system administration.
