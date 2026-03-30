@@ -34,7 +34,7 @@ Before using the scripts, the following dependencies must be available in the Li
 
 Scripts Included:
 
-### 1.System Identity Profiler(`Script1.sh `)
+### 1. System Identity Profiler(`Script1.sh `)
 
 **Description:**
 This script simply displays important information about the hardware and operating system of the Linux machine. It does this by retrieving information such as the hostname, operating system, kernel, CPU architecture, total memory, and active network interfaces, then displaying them in a clean and color-formatted terminal output.
