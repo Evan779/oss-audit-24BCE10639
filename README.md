@@ -1,52 +1,167 @@
 # Linux Systems Administration & Auditing Scripts
 
-A collection of five Bash shell scripts developed as part of an Open Source Software Capstone Project. These scripts demonstrate core Linux system administration concepts including system profiling, package inspection, disk auditing, log analysis, and file generation.
+## Student Information
 
-## Prerequisites
+- **Name:** Your Name
+- **Roll Number:** Your Roll Number
 
-- A Linux-based operating system (Ubuntu/Debian or RPM-based distro)
-- Bash shell (`/bin/bash`)
-- Standard Linux utilities: `hostnamectl`, `lscpu`, `ip`, `awk`, `grep`, `dpkg` or `rpm`
+---
 
-## Scripts Included
+## Chosen Software
 
-### 1. System Identity Profiler (`Script1.sh`)
-Retrieves and displays essential information about the Linux machine's hardware and operating system.
-- **Concepts:** System queries using `hostnamectl`, `lscpu`, `free`; network interface parsing using `ip`; terminal text formatting.
+**VLC Media Player** - VLC is a free and open-source cross-platform media player. It is developed by the non-profit VideoLAN organization. VLC is released under the GNU General Public License (GPL). It is capable of playing most audio and video formats without the need to install additional codecs. VLC is the most widely used open-source media player in the world.
+
+---
+
+## Dependencies
+
+Before using the scripts, the following dependencies must be available in the Linux system.
+
+| Dependency | Purpose | Install Command |
+|------------|---------|----------------|
+| bash       | Shell   | Pre-installed   |
+| hostnamectl| Fetch   | Pre-installed    |
+| lscpu      | Fetch   | Pre-installed    |
+| free       | Fetch   | Pre-installed    |
+| ip         | Fetch   | Pre-installed    |
+| dpkg/rpm   | Package | Pre-installed    |
+| awk, grep, cut | Text   | Pre-installed    |
+| printf     | Formatted| Pre-installed    |
+
+> **Note:** All the scripts are designed to be executed on standard Linux Distributions. No additional installations are required.
+
+## Script Description
+
+Scripts Included:
+
+### Script1.sh - System Identity Profiler
+
+**Description:**
+This script simply displays important information about the hardware and operating system of the Linux machine. It does this by retrieving information such as the hostname, operating system, kernel, CPU architecture, total memory, and active network interfaces, then displaying them in a clean and color-formatted terminal output.
+
+**Concepts Used:**
+- System information queries via `hostnamectl`, `lscpu`, and `free`
+- Network interface information parsing via `ip`
+- Terminal text formatting via ANSI escape codes and `echo -e`
+- Command substitution via `$(...)`
+- `if-else` statements
+
+---
 
 ### 2. FOSS Package Inspector (`Script2.sh`)
-Identifies the installed package manager (`dpkg` or `rpm`) and checks for the installation of free/open-source software packages such as VLC, Python, etc.
-- **Concepts:** `case` statements, exit codes using `$?`, suppressing output using `/dev/null`.
+
+**Description:**
+This script detects the package manager type of the Linux machine, whether `dpkg` or `rpm`, and then checks if certain free and open-source software are installed. It then displays the installation status, version number, and a description of the package.
+
+**Concepts Used:**
+- `case` statements for package manager type detection
+- Exit code evaluation via `$?` for package installation check
+- Suppression of unwanted output via `&>/dev/null`
+- Pipeline-based text manipulation via `grep` and `awk` for extracting package versions
+- `if-elif-else` statements
+
+---
 
 ### 3. Disk & Permission Auditor (`Script3.sh`)
-Scans common Linux system directories and displays disk space, ownership, and permission strings in a clean, column-aligned table.
-- **Concepts:** `for` loops, arrays, `printf`, `awk`, and `cut`.
+
+**Description:**
+This script audits a list of common directories on a Linux machine and displays a well-aligned table showing the disk usage, owner, and permission of each directory. It checks whether a directory exists before performing any operation on it.
+
+**Concepts Used:**
+- Array variables for storing common directories
+- `for` loops for iteration of array elements
+- File test operators for checking whether a directory exists
+- `printf` for formatted, column-aligned table printing
+- Command substitution and piping using `awk` and `cut`
+
+---
 
 ### 4. Log File Analyzer (`Script4.sh`)
-Reads system log files (e.g., `/var/log/dpkg.log`) line by line, counts keyword occurrences, and displays a statistical summary with percentages.
-- **Concepts:** `while read`, positional parameters `$1`/`$2`, arithmetic evaluation, conditional logic.
+
+**Description:**
+This shell script will read a specified system log file (e.g., `/var/log/dpkg.log`), count how many times a specified word (e.g., `ERROR`) appears in that log, and then print out a statistical summary.
+
+**Concepts Used:**
+- Using positional parameters `$1` (log file path) and `$2` (keyword) for user input
+- Using `while read` to read the log file line by line instead of all at once
+- Using shell arithmetic expansion `$((...))` for incrementing counters
+- Using `awk` for calculating percentages with decimal points
+- Using conditional statements for validating user inputs
+
+---
 
 ### 5. Open Source Manifesto Generator (`Script5.sh`)
-An interactive script that prompts the user for input, inserts responses into a multi-line template, and saves the result as a new `.txt` file.
-- **Concepts:** `read`, command substitution, string manipulation using `tr`, output redirection using `>`.
+
+**Description:**
+This is an interactive shell script that asks users for input, inserts that input into a predefined multi-line text template, and saves that template with user input inserted into a new `.txt` file. This is useful for generating personalized text documents using a template.
+
+**Concepts Used:**
+- Using `read -p` for asking users for input and storing that input in a variable
+- Using string concatenation by inserting variables and command substitutions into double quotes
+- Using `tr` for replacing spaces with underscores in creating valid file names
+- Using output redirection with the '>' operator to direct the output generated by the script to a new file
+
+---
 
 ## How to Run
 
-1. Clone or download the scripts from this repository.
-2. Make the script executable:
+### Step 1 — Download the Scripts
+
+To get the code running on your Linux system, follow these steps. First, clone this repository to your local Linux machine. You can do this with the following command in your terminal.
+
 ```bash
-chmod +x script_name.sh
-```
-3. Run the script:
-```bash
-./script_name.sh
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
 ```
 
-> **Note:** Script 4 requires two arguments — the log file path and the keyword to search for:
-> ```bash
-> ./Script4.sh /var/log/dpkg.log ERROR
-> ```
+Alternatively, if you don’t have git installed in your system, you can simply download the scripts and navigate to the folder containing them.
+
+---
+
+### Step 2 — Make the Scripts Executable
+
+To execute the scripts, we need to make them executable. We can do this with the following command. Replace the script names with the names of your own script files.
+
+```bash
+chmod +x Script1.sh Script2.sh Script3.sh Script4.sh Script5.sh
+```
+
+---
+
+### Step 3 — Run Each Script
+
+#### Script 1 — System Identity Profiler
+```bash
+./Script1.sh
+```
+
+#### Script 2 — FOSS Package Inspector
+```bash
+./Script2.sh
+```
+
+#### Script 3 — Disk & Permission Auditor
+```bash
+./Script3.sh
+```
+
+#### Script 4 — Log File Analyzer
+The script needs two arguments: the path to the log file and the word we want to search for.
+```bash
+./Script4.sh /var/log/dpkg.log ERROR
+```
+> Replace `/var/log/dpkg.log` with the path to your log file and `ERROR` with the word you want to search for.
+
+#### Script 5 — Open Source Manifesto Generator
+```bash
+./Script5.sh
+```
+> Follow the prompts and enter your details. The script will generate a `.txt` file in the current directory.
+
+---
 
 ## Author
 
-Developed as part of an Open Source Software Capstone Project exploring VLC Media Player and Linux system administration.
+- **Name:** U Evan Steve
+- **Roll Number:** 24BCE10639
+- **Project:** Open Source Software Capstone — VLC Media Player
