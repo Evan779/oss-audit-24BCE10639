@@ -163,5 +163,5 @@ The script needs two arguments: the path to the log file and the word we want to
 ## Author
 
 - **Name:** U Evan Steve
-- **Roll Number:** 24BCE10639
+- **Registration Number:** 24BCE10639
 - **Project:** Open Source Software Capstone — VLC Media Player
