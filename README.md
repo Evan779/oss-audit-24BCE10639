@@ -3,7 +3,7 @@
 ## Student Information
 
 - **Name:** U Evan Steve
-- **Roll Number:** 24BCE10639
+- **Registration Number:** 24BCE10639
 
 ---
 
